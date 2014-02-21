@@ -41,11 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttackEvent.cs" />
+    <Compile Include="Cannon.cs" />
+    <Compile Include="Captain.cs" />
+    <Compile Include="DamageEvent.cs" />
+    <Compile Include="GameEngine.cs" />
+    <Compile Include="GameEvent.cs" />
+    <Compile Include="IAttackable.cs" />
+    <Compile Include="IAttacker.cs" />
+    <Compile Include="IDamagable.cs" />
+    <Compile Include="IDrawable.cs" />
+    <Compile Include="IIdentifiable.cs" />
+    <Compile Include="IUpgradable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ship.cs" />
+    <Compile Include="Stat.cs" />
+    <Compile Include="Wall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
