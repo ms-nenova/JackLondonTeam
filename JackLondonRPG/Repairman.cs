@@ -8,5 +8,10 @@ namespace JackLondonRPG
 {
     class Repairman
     {
+        public int PricePerPointRepair { get; set; }
+
+        public void RepairSpecificWall(Wall wall);
+
+        public void RepairAllWalls(List<Wall> walls);
     }
 }

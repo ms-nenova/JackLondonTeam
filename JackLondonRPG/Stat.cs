@@ -23,16 +23,16 @@ namespace JackLondonRPG
 			get { throw new NotImplementedException(); }
 		}
 
-		public List<int> UpdgradeCosts
-		{
-			get
-			{
-				throw new System.NotImplementedException();
-			}
-			set
-			{
-			}
-		}
+        //public List<int> UpdgradeCosts
+        //{
+        //    get
+        //    {
+        //        throw new System.NotImplementedException();
+        //    }
+        //    set
+        //    {
+        //    }
+        //}
 
 		public int RankValues
 		{

@@ -8,5 +8,9 @@ namespace JackLondonRPG
 {
     class Merchant
     {
+        public int PricePerRankUpCannon { get; set; }
+        public int PricePerRankUpWall { get; set; }
+
+        public void Upgrade(object obj);
     }
 }
