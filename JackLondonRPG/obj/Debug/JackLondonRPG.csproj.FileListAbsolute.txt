@@ -1,3 +1,4 @@
 D:\Vanina\VisualStudio_Projects 2013 - 2014\OOP\TeamWork\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.exe.config
 D:\GitHub\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.exe.config
 D:\GitHub\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Documents\GitHub\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.exe.config
