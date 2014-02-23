@@ -17,7 +17,7 @@ namespace JackLondonRPG
 
 		public void GetDamaged(int damage)
 		{
-			throw new NotImplementedException();
+            this.currHealth -= damage;
 		}
 
 		public int CurrHealth
