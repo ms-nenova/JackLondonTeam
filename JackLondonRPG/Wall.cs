@@ -7,6 +7,9 @@ namespace JackLondonRPG
 {
 	public class Wall : IAttackable, IDamageable, IDrawable
 	{
+        private string name;
+        private int currHealth;
+
 		public void GetAttacked(IAttacker attacker)
 		{
 			throw new NotImplementedException();
@@ -21,11 +24,16 @@ namespace JackLondonRPG
 		{
 			get
 			{
-				throw new NotImplementedException();
+                return this.currHealth;
 			}
+
 			set
 			{
-				throw new NotImplementedException();
+                if (value < 0)
+                {
+                    throw new ArgumentException("Current health cannot be negative!");
+                }
+                this.currHealth = value;
 			}
 		}
 
@@ -36,8 +44,16 @@ namespace JackLondonRPG
 
 		public string Name
 		{
-			get { throw new NotImplementedException(); }
-			private set { throw new NotImplementedException(); }
+            get { return this.name; }
+
+			private set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentException("Name cannot be empty or null!");
+                }
+                this.name = value;
+            }
 		}
 
 	}
