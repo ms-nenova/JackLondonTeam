@@ -12,7 +12,7 @@ namespace JackLondonRPG
 
 		public void GetAttacked(IAttacker attacker)
 		{
-			throw new NotImplementedException();
+			attacker.GetDamage();
 		}
 
 		public void GetDamaged(int damage)
@@ -39,7 +39,15 @@ namespace JackLondonRPG
 
 		public char[,] GetImage()
 		{
-			throw new NotImplementedException();
+            char[,] wall = new char[6, 3] { 
+                                            { '|', ' ', '|' },
+                                            { '|', ' ', '|' },
+                                            { '|', ' ', '|' },
+                                            { '|', ' ', '|' },
+                                            { '|', ' ', '|' },
+                                            { '|', ' ', '|' },                                                     
+                                           };
+            return wall;
 		}
 
 		public string Name
