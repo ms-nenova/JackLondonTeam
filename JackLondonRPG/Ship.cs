@@ -7,6 +7,11 @@ namespace JackLondonRPG
 {
 	public class Ship : IAttackable, IDamageable, IAttacker, IDrawable
 	{
+        public Stat<int> Mobility
+        {
+            get;
+            set;
+        }
 		public List<Cannon> Cannons
 		{
 			get

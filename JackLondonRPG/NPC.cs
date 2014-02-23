@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    class Program
+    class NPC
     {
-        static void Main()
-        {            
-        }
+        public string Name { get; set; }
+        public string Job { get; set; }
     }
 }

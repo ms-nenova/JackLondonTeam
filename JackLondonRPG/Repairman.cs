@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    class Repairman
+    class Repairman:NPC
     {
         public int PricePerPointRepair { get; set; }
 

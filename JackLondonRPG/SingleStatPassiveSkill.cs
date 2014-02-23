@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    class Program
+    class SingleStatPassiveSkill:PassiveSkill
     {
-        static void Main()
-        {            
+        public override void Apply(Stat<int> stat, int manipulator)
+        {
+                stat.RankUp(manipulator);
+
         }
     }
 }

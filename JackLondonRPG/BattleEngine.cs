@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    class Program
+    class BattleEngine
     {
-        static void Main()
-        {            
-        }
     }
 }

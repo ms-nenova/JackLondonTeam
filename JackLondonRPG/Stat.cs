@@ -10,18 +10,19 @@ namespace JackLondonRPG
 	
 		public int CurrRank
 		{
-			get { throw new NotImplementedException(); }
+			get;set; 
 		}
 
 		public T CurrValue
 		{
-			get { throw new NotImplementedException(); }
+			get;set;
 		}
 
-		public int MaxRank
-		{
-			get { throw new NotImplementedException(); }
-		}
+        public int MaxRank
+        {
+            get;
+            set;
+        }
 
         //public List<int> UpdgradeCosts
         //{
@@ -34,18 +35,13 @@ namespace JackLondonRPG
         //    }
         //}
 
-		public int RankValues
-		{
-			get
-			{
-				throw new System.NotImplementedException();
-			}
-			set
-			{
-			}
-		}
+        public int RankValues
+        {
+            get;
+            set;
+        }
 
-		public void RankUp()
+		public void RankUp(int rankManipulator)//rankManipulator shows by how many ranks the stat should go up or down in case of negative numbers.
 		{
 			throw new NotImplementedException();
 		}

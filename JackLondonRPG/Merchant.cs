@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    class Merchant
+    class Merchant:NPC
     {
         public int PricePerRankUpCannon { get; set; }
         public int PricePerRankUpWall { get; set; }
 
-        public void Upgrade(object obj);
+        public void Upgrade(Stat<int> stat);
+        public void Upgrade(List<Stat<int>> stat);
     }
 }
