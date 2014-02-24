@@ -7,31 +7,42 @@ namespace JackLondonRPG
 {
 	public class Cannon : IAttacker, IDrawable
 	{
+		public Cannon(string name, Stat<int> damage, Stat<int> precision)
+		{
+			this.name = name;
+			this.damage = damage;
+			this.precision = precision;
+		}
+
+		private Stat<int> damage;
 		public Stat<int> Damage
 		{
 			get
 			{
-				throw new System.NotImplementedException();
+				return this.damage;
 			}
-			set
+			private set
 			{
+				this.damage = value;
 			}
 		}
 
+		private Stat<int> precision;
 		public Stat<int> Precision
 		{
 			get
 			{
-				throw new System.NotImplementedException();
+				return this.precision;
 			}
-			set
+			private set
 			{
+				this.precision = value;
 			}
 		}
 
 		public AttackEvent Attack(IAttackable target)
 		{
-			throw new NotImplementedException();
+			return new AttackEvent(this, target);
 		}
 
 		public int GetDamage()
@@ -41,12 +52,21 @@ namespace JackLondonRPG
 
 		public char[,] GetImage()
 		{
-			throw new NotImplementedException();
+			 return new char[6, 3] { 
+                                            { '>', ' ', '>' },
+                                            { '>', ' ', '>' },
+                                            { '>', ' ', '>' },
+                                            { '>', ' ', '>' },
+                                            { '>', ' ', '>' },
+                                            { '>', ' ', '>' },
+                                    };
 		}
 
+		private string name;
 		public string Name
 		{
-			get { throw new NotImplementedException(); }
+			get { return this.name; }
+			private set { this.name = value; }
 		}
 	}
 }

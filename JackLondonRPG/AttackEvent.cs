@@ -7,25 +7,35 @@ namespace JackLondonRPG
 {
 	public class AttackEvent : GameEvent
 	{
+		public AttackEvent(IAttacker attacker, IAttackable target)
+		{
+			this.attacker = attacker;
+			this.target = target;
+		}
+
+		private IAttacker attacker;
 		public IAttacker Attacker
 		{
 			get
 			{
-				throw new System.NotImplementedException();
+				return this.attacker;
 			}
-			set
+			private set
 			{
+				this.attacker = value;
 			}
 		}
 
+		private IAttackable target;
 		public IAttackable Target
 		{
 			get
 			{
-				throw new System.NotImplementedException();
+				return this.target;
 			}
-			set
+			private set
 			{
+				this.target = value;
 			}
 		}
 
