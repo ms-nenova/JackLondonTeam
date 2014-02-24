@@ -10,7 +10,7 @@ namespace JackLondonRPG
     {
         public override void Apply(List<Stat<int>> stats, int manipulator)
         {
-            stats.FirstOrDefault().RankUp(manipulator);
+            stats.FirstOrDefault().RankChange(manipulator);
             NumberOfUses = NumberOfUses - 1;
         }
     }

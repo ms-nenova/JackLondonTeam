@@ -12,7 +12,7 @@ namespace JackLondonRPG
         {
             foreach (var stat in stats)
             {
-                stat.RankUp(manipulator);                
+                stat.RankChange(manipulator);                
             }
         }
     }

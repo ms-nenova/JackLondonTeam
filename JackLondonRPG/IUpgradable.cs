@@ -22,7 +22,7 @@ namespace JackLondonRPG
 			get;
 		}
 	
-		void RankUp(int rankManipulator);
-		void RankUp(ref int goldProvider);
+		void RankChange(int rankManipulator);
+		void RankChange(ref int goldProvider);
 	}
 }

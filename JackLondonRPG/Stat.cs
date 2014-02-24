@@ -41,12 +41,12 @@ namespace JackLondonRPG
             set;
         }
 
-		public void RankUp(int rankManipulator)//rankManipulator shows by how many ranks the stat should go up or down in case of negative numbers.
+		public void RankChange(int rankManipulator)//rankManipulator shows by how many ranks the stat should go up or down in case of negative numbers.
 		{
 			throw new NotImplementedException();
 		}
 
-		public void RankUp(ref int goldProvider)
+		public void RankChange(ref int goldProvider)
 		{
 			throw new NotImplementedException();
 		}
