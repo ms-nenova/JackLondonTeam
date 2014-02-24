@@ -9,6 +9,12 @@ namespace JackLondonRPG
 	{
         private string name;
         private int currHealth;
+       
+        public Wall(string name, int currHealth)
+        {
+            this.Name = name;
+            this.CurrHealth = currHealth;
+        }
 
 		public AttackEvent GetAttacked(IAttacker attacker)
 		{

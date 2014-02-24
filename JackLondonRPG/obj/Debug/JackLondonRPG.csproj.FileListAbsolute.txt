@@ -8,3 +8,8 @@ C:\Git\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.exe
 C:\Git\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.pdb
 C:\Git\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.exe
 C:\Git\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.pdb
+D:\Vanina\GitHub\PersonalProjects\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.exe
+D:\Vanina\GitHub\PersonalProjects\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.pdb
+D:\Vanina\GitHub\PersonalProjects\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.csprojResolveAssemblyReference.cache
+D:\Vanina\GitHub\PersonalProjects\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.exe
+D:\Vanina\GitHub\PersonalProjects\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.pdb
