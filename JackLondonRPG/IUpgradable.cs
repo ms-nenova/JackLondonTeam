@@ -10,7 +10,6 @@ namespace JackLondonRPG
 		int CurrRank
 		{
 			get;
-			private set;
 		}
 
 		T CurrValue
@@ -21,9 +20,9 @@ namespace JackLondonRPG
 		int MaxRank
 		{
 			get;
-			private set;
 		}
 	
-		void RankUp();
+		void RankUp(int rankManipulator);
+		void RankUp(ref int goldProvider);
 	}
 }

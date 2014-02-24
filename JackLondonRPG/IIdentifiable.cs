@@ -10,7 +10,6 @@ namespace JackLondonRPG
 		string Name
 		{
 			get;
-			private set;
 		}
 	}
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    class PassiveSkill:Skill
+    class PassiveSkill : Skill
     {
         public override void Apply(List<Stat<int>> stats, int manipulator)
         {

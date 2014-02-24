@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    abstract class Skill
+    public abstract class Skill
     {
         public string Name
-        { get;set;}
+        { 
+			get;
+			set;
+		}
 
         public int RankManipulator
         {
             get;
             set;
         }
-        public abstract void Apply();
+
+        public abstract void Apply(List<Stat<int>> stats, int manipulator);
 
     }
 }

@@ -34,7 +34,7 @@ namespace JackLondonRPG
 			}
 		}
 
-		public void GetAttacked(IAttacker attacker)
+		public AttackEvent GetAttacked(IAttacker attacker)
 		{
 			throw new NotImplementedException();
 		}

@@ -10,8 +10,14 @@ namespace JackLondonRPG
     {
         public int PricePerPointRepair { get; set; }
 
-        public void RepairSpecificWall(Wall wall);
+        public void RepairSpecificWall(Wall wall) 
+		{
+			throw new System.NotImplementedException();
+		}
 
-        public void RepairAllWalls(List<Wall> walls);
+        public void RepairAllWalls(List<Wall> walls)
+		{
+			throw new System.NotImplementedException();
+		}
     }
 }

@@ -3,3 +3,8 @@ D:\GitHub\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.exe.config
 D:\GitHub\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.csprojResolveAssemblyReference.cache
 C:\Users\Martin\Documents\GitHub\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.exe.config
 D:\Vanina\GitHub\PersonalProjects\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.exe.config
+C:\Git\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.exe.config
+C:\Git\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.exe
+C:\Git\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.pdb
+C:\Git\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.exe
+C:\Git\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.pdb

@@ -10,9 +10,10 @@ namespace JackLondonRPG
         private string name;
         private int currHealth;
 
-		public void GetAttacked(IAttacker attacker)
+		public AttackEvent GetAttacked(IAttacker attacker)
 		{
-			attacker.GetDamage();
+			// attacker.GetDamage();
+			throw new System.NotImplementedException();
 		}
 
 		public void GetDamaged(int damage)

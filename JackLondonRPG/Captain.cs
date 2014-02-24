@@ -21,7 +21,8 @@ namespace JackLondonRPG
 
         public void UseAbility(Skill skill)
         {
-            skill.Apply();
+            // skill.Apply();
+			throw new System.NotImplementedException();
         }
 	}
 }

@@ -11,7 +11,14 @@ namespace JackLondonRPG
         public int PricePerRankUpCannon { get; set; }
         public int PricePerRankUpWall { get; set; }
 
-        public void Upgrade(Stat<int> stat);
-        public void Upgrade(List<Stat<int>> stat);
+        public void Upgrade(Stat<int> stat)
+		{
+			throw new System.NotImplementedException();
+		}
+
+        public void Upgrade(List<Stat<int>> stat)
+		{
+			throw new System.NotImplementedException();
+		}
     }
 }

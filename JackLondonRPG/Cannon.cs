@@ -29,7 +29,7 @@ namespace JackLondonRPG
 			}
 		}
 
-		public void Attack(IAttackable target)
+		public AttackEvent Attack(IAttackable target)
 		{
 			throw new NotImplementedException();
 		}

@@ -8,10 +8,9 @@ namespace JackLondonRPG
 {
     class SingleStatPassiveSkill:PassiveSkill
     {
-        public override void Apply(Stat<int> stat, int manipulator)
+        public override void Apply(List<Stat<int>> stats, int manipulator)
         {
-                stat.RankUp(manipulator);
-
+			stats.FirstOrDefault().RankUp(manipulator);
         }
     }
 }
