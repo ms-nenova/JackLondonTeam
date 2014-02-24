@@ -8,6 +8,11 @@ namespace JackLondonRPG
 {
     class PassiveSkill : Skill
     {
+
+        public PassiveSkill(string name, int rankManipulator):base(name, rankManipulator)
+        {
+        }
+
         public override void Apply(List<Stat<int>> stats, int manipulator)
         {
             foreach (var stat in stats)

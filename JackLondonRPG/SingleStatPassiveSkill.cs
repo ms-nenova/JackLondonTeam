@@ -8,6 +8,9 @@ namespace JackLondonRPG
 {
     class SingleStatPassiveSkill:PassiveSkill
     {
+        public SingleStatPassiveSkill(string name, int rankManipulator):base(name, rankManipulator)
+        {
+        }
         public override void Apply(List<Stat<int>> stats, int manipulator)
         {
 			stats.FirstOrDefault().RankChange(manipulator);

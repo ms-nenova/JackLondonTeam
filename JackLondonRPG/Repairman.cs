@@ -8,7 +8,24 @@ namespace JackLondonRPG
 {
     class Repairman:NPC
     {
-        public int PricePerPointRepair { get; set; }
+        private int pricePerPointRepair;
+
+        public Repairman(string name, string job, int price):base(name,job)
+        {
+            this.PricePerPointRepair = price;
+        }
+
+        public int PricePerPointRepair
+        {
+            get
+            {
+                return this.pricePerPointRepair;
+            }
+            set
+            {
+                this.pricePerPointRepair = value;
+            }
+        }
 
         public void RepairSpecificWall(Wall wall) 
 		{

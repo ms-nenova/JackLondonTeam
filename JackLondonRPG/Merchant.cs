@@ -8,8 +8,40 @@ namespace JackLondonRPG
 {
     class Merchant:NPC
     {
-        public int PricePerRankUpCannon { get; set; }
-        public int PricePerRankUpWall { get; set; }
+        private int pricePerRankCannon;
+        private int pricePerRankWall;
+
+        public Merchant(string name, string job, int priceCannon, int priceWall):base(name, job)
+        {
+            this.PricePerRankUpCannon = priceCannon;
+            this.PricePerRankWall = priceWall;
+        }
+
+
+        public int PricePerRankUpCannon
+        {
+            get
+            {
+                return this.pricePerRankCannon;
+            }
+            set
+            {
+                this.pricePerRankCannon = value;
+            }
+        }
+
+
+        public int PricePerRankWall
+        {
+            get
+            {
+                return this.pricePerRankWall;
+            }
+            set
+            {
+                this.pricePerRankWall = value;
+            }
+        }
 
         public void Upgrade(Stat<int> stat)
 		{

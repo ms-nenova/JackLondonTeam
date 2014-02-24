@@ -8,7 +8,37 @@ namespace JackLondonRPG
 {
     class NPC
     {
-        public string Name { get; set; }
-        public string Job { get; set; }
+        private string name;
+        private string job;
+
+        public NPC(string name, string job)
+        {
+            this.Name = name;
+            this.Job = job;
+        }
+
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+            set
+            {
+                this.name = value;
+            }
+        }
+        public string Job
+        {
+            get
+            {
+                return this.job;
+            }
+            set
+            {
+                this.job = value;
+            }
+        }
+
     }
 }

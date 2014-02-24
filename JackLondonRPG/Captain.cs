@@ -7,16 +7,37 @@ namespace JackLondonRPG
 {
 	public class Captain
 	{
+        private string name;
+        private Skill ability;
+
+        public Captain (string name, Skill ability)
+        {
+            this.name = name;
+            this.ability = ability;
+        }
+
         public string Name
         {
-            get;
-            set;
+            get
+            {
+               return this.name;
+            }
+            private set
+            {
+                this.name = name;
+            }
         }
 
         public Skill Ability
         {
-            get;
-            set;
+            get
+            {
+                return this.ability;
+            }
+            private set
+            {
+                this.ability = ability;
+            }
         }
 
         public void UseAbility(Skill skill)
