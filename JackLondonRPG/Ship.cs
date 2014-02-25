@@ -71,10 +71,6 @@ namespace JackLondonRPG
 
             private set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Current health cannot be negative!");
-                }
                 this.currHealth = value;
             }
         }
