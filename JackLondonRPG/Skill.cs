@@ -9,12 +9,9 @@ namespace JackLondonRPG
     public abstract class Skill
     {
         private string name;
-        private int rankManipulator;
 
-        public Skill(string name, int rankManipulator)
+        public Skill()
         {
-            this.Name = name;
-            this.RankManipulator = rankManipulator;
         }
 
         public string Name
@@ -29,19 +26,9 @@ namespace JackLondonRPG
             }
 		}
 
-        public int RankManipulator
-        {
-            get
-            {
-                return this.rankManipulator;
-            }
-            set
-            {
-                this.rankManipulator = value;
-            }
-        }
 
-        public abstract void Apply(List<Stat<int>> stats, int manipulator);
+
+        public abstract void Apply(object obj);
 
     }
 }

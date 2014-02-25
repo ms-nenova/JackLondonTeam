@@ -16,3 +16,6 @@ D:\Vanina\GitHub\PersonalProjects\JackLondonTeam\JackLondonRPG\obj\Debug\JackLon
 C:\Users\Martin\Documents\GitHub\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.exe
 C:\Users\Martin\Documents\GitHub\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.pdb
 C:\Git\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Documents\GitHub\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Documents\GitHub\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.exe
+C:\Users\Martin\Documents\GitHub\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.pdb

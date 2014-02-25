@@ -46,6 +46,9 @@
     <Compile Include="Cannon.cs" />
     <Compile Include="Captain.cs" />
     <Compile Include="DamageEvent.cs" />
+    <Compile Include="Fireball.cs" />
+    <Compile Include="Fog.cs" />
+    <Compile Include="FortifyDamage.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="GameEvent.cs" />
     <Compile Include="IAttackable.cs" />
@@ -62,8 +65,6 @@
     <Compile Include="RandomGenerator.cs" />
     <Compile Include="Repairman.cs" />
     <Compile Include="Ship.cs" />
-    <Compile Include="SingleStatPassiveSkill.cs" />
-    <Compile Include="SingleTargetSkill.cs" />
     <Compile Include="Skill.cs" />
     <Compile Include="Stat.cs" />
     <Compile Include="Wall.cs" />

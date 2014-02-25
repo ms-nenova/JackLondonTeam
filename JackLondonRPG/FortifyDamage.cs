@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    class PassiveSkill : Skill
+    class FortifyDamage:PassiveSkill
     {
-
-        public PassiveSkill():base()
+        public FortifyDamage():base()
         {
+            this.Name = "Fortify Damage";
         }
 
         public override void Apply(object obj)
@@ -21,5 +21,6 @@ namespace JackLondonRPG
                 cannon.Damage.RankChange(1);
             }
         }
+
     }
 }

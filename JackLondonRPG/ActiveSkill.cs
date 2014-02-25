@@ -10,9 +10,8 @@ namespace JackLondonRPG
     {
         private int numberOfUses;
 
-        public ActiveSkill(string name, int rankManipulator, int numberOfUses):base(name,rankManipulator)
+        public ActiveSkill():base()
         {
-            this.NumberOfUses = numberOfUses;
         }
 
         public int NumberOfUses
@@ -27,13 +26,17 @@ namespace JackLondonRPG
             }
         }
 
-        public override void Apply(List<Stat<int>> stats, int manipulator)
+        public override void Apply(object obj)
         {
-            foreach (var stat in stats)
-            {
-                stat.RankChange(manipulator);
-                NumberOfUses = NumberOfUses - 1;
-            }
+        }
+
+        public int ChooseTarget(Ship ship)
+        {
+            int target = new int();
+            Console.WriteLine("Choose a target for your ability [0-5]");
+            target = int.Parse(Console.ReadLine());
+
+            return target;
         }
     }
 }

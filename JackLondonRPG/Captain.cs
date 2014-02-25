@@ -24,7 +24,7 @@ namespace JackLondonRPG
             }
             private set
             {
-                this.name = name;
+                this.name = value;
             }
         }
 
@@ -36,7 +36,7 @@ namespace JackLondonRPG
             }
             private set
             {
-                this.ability = ability;
+                this.ability = value;
             }
         }
 
