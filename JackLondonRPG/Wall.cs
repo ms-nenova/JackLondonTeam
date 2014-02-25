@@ -39,7 +39,7 @@ namespace JackLondonRPG
 
             currHealth = finalHealth;
 
-            return new DamageEvent;
+            return new DamageEvent(this, damage);
 		}
 
 		public int CurrHealth
