@@ -11,10 +11,11 @@ namespace JackLondonRPG
         private int currHealth;
         Stat<int> MaxHealth { get; set; }
        
-        public Wall(string name, int currHealth)
+        public Wall(string name, int currHealth, Stat<int> maxHealth)
         {
             this.Name = name;
             this.CurrHealth = currHealth;
+            this.MaxHealth = maxHealth;
         }
 
 		public AttackEvent GetAttacked(IAttacker attacker)
