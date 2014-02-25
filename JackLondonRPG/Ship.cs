@@ -12,6 +12,17 @@ namespace JackLondonRPG
         private int currHealth;
         private IList<Wall> wall;
         private IList<Cannon> cannon;
+        private Stat<int> mobility;
+
+        public Ship(string name, Captain captain, int currHealth, List<Wall> wall, List<Cannon> cannon, Stat<int> mobility)
+        {
+            this.Name = name;
+            this.Captain = captain;
+            this.CurrHealth = currHealth;
+            this.Walls = new List<Wall>(wall);
+            this.Cannons = new List<Cannon>(cannon);
+            this.Mobility = mobility;
+        }
 
         public Stat<int> Mobility
         {
@@ -47,6 +58,7 @@ namespace JackLondonRPG
 
 		public AttackEvent GetAttacked(IAttacker attacker)
 		{
+            // attacker.GetDamage();
 			throw new NotImplementedException();
 		}
 
@@ -69,7 +81,7 @@ namespace JackLondonRPG
 
 		public void GetDamaged(int damage)
 		{
-			throw new NotImplementedException();
+            this.currHealth -= damage;
 		}
 
 		public Captain Captain
