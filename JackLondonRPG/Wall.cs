@@ -9,6 +9,7 @@ namespace JackLondonRPG
 	{
         private string name;
         private int currHealth;
+        Stat<int> MaxHealth { get; set; }
        
         public Wall(string name, int currHealth)
         {
@@ -22,9 +23,23 @@ namespace JackLondonRPG
 			throw new System.NotImplementedException();
 		}
 
-		public void GetDamaged(int damage)
+		public DamageEvent GetDamaged(int damage)
 		{
-            this.currHealth -= damage;
+            int finalHealth = currHealth - damage;
+
+            if (finalHealth>MaxHealth.CurrValue)
+            {
+                finalHealth = MaxHealth.CurrValue;
+            }
+
+            if (finalHealth<0)
+            {
+                finalHealth = 0;
+            }
+
+            currHealth = finalHealth;
+
+            return new DamageEvent;
 		}
 
 		public int CurrHealth
@@ -34,7 +49,7 @@ namespace JackLondonRPG
                 return this.currHealth;
 			}
 
-			private set
+			set
 			{
                 if (value < 0)
                 {
