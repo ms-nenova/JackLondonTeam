@@ -13,6 +13,6 @@ namespace JackLondonRPG
 			set;
 		}
 	
-		void GetDamaged(int damage);
+		DamageEvent GetDamaged(int damage);
 	}
 }
