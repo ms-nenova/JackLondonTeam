@@ -7,19 +7,28 @@ namespace JackLondonRPG
 {
 	public class Ship : IAttackable, IDamageable, IAttacker, IDrawable
 	{
+        private string name;
+        private Captain captain;
+        private int currHealth;
+        private IList<Wall> wall;
+        private IList<Cannon> cannon;
+
         public Stat<int> Mobility
         {
             get;
-            set;
+            private set;
         }
+
 		public List<Cannon> Cannons
 		{
 			get
 			{
-				throw new System.NotImplementedException();
+                return new List<Cannon>();
 			}
-			set
+
+			private set
 			{
+                this.cannon = value;
 			}
 		}
 
@@ -27,10 +36,12 @@ namespace JackLondonRPG
 		{
 			get
 			{
-				throw new System.NotImplementedException();
+				return new List<Wall>();
 			}
-			set
+
+			private set
 			{
+                this.wall = value;
 			}
 		}
 
@@ -39,17 +50,22 @@ namespace JackLondonRPG
 			throw new NotImplementedException();
 		}
 
-		public int CurrHealth
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-			set
-			{
-				throw new NotImplementedException();
-			}
-		}
+        public int CurrHealth
+        {
+            get
+            {
+                return this.currHealth;
+            }
+
+            private set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Current health cannot be negative!");
+                }
+                this.currHealth = value;
+            }
+        }
 
 		public void GetDamaged(int damage)
 		{
@@ -60,16 +76,27 @@ namespace JackLondonRPG
 		{
 			get
 			{
-				throw new System.NotImplementedException();
+                return this.captain;
 			}
-			set
-			{
-			}
+
+            private set
+            {
+                this.captain = value;
+            }
 		}
 
 		public string Name
 		{
-			get { throw new NotImplementedException(); }
+            get { return this.name; }
+
+            private set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentException("Name cannot be empty or null!");
+                }
+                this.name = value;
+            }
 		}
 
 		public AttackEvent Attack(IAttackable target)
@@ -77,10 +104,10 @@ namespace JackLondonRPG
 			throw new NotImplementedException();
 		}
 
-		public int GetDamage()
-		{
-			throw new NotImplementedException();
-		}
+        public void GetDamaged(int damage)
+        {
+            this.currHealth -= damage;
+        }
 
 		public char[,] GetImage()
 		{

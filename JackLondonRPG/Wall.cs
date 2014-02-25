@@ -34,7 +34,7 @@ namespace JackLondonRPG
                 return this.currHealth;
 			}
 
-			set
+			private set
 			{
                 if (value < 0)
                 {
