@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    class NPC
+    public class NPC
     {
         private string name;
         private string job;

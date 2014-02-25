@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    class Merchant:NPC
+    public class Merchant:NPC
     {
         private int pricePerRankCannon;
         private int pricePerRankWall;
