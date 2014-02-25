@@ -7,13 +7,29 @@ namespace JackLondonRPG
 {
 	public class AttackEvent : GameEvent
 	{
-		public AttackEvent(IAttacker attacker, IAttackable target)
+		private IAttacker attacker;
+		private IAttackable target;
+		private bool shotConnected;
+
+		public AttackEvent(IAttacker attacker, IAttackable target, bool shotConnected)
 		{
-			this.attacker = attacker;
-			this.target = target;
+			this.Attacker = attacker;
+			this.Target = target;
+			this.ShotConnected = shotConnected;
 		}
 
-		private IAttacker attacker;
+		public bool ShotConnected
+		{
+			get
+			{
+				return this.shotConnected;
+			}
+			private set
+			{
+				this.shotConnected = value;
+			}
+		}
+
 		public IAttacker Attacker
 		{
 			get
@@ -26,7 +42,6 @@ namespace JackLondonRPG
 			}
 		}
 
-		private IAttackable target;
 		public IAttackable Target
 		{
 			get
@@ -41,7 +56,10 @@ namespace JackLondonRPG
 
 		public override string GetMessage()
 		{
-			throw new NotImplementedException();
+			string returnValue = "";
+			returnValue += this.Attacker.Name + " attacked " + this.Target.Name + "\n";
+
+			return returnValue;
 		}
 	}
 }

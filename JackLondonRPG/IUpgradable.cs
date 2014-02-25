@@ -5,12 +5,9 @@ using System.Text;
 
 namespace JackLondonRPG
 {
-	public interface IUpgradable<T>
+	public interface IUpgradable<T> : IIdentifiable
 	{
-		int CurrRank
-		{
-			get;
-		}
+		int CurrRank { get; }
 
 		T CurrValue
 		{

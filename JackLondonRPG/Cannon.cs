@@ -42,7 +42,7 @@ namespace JackLondonRPG
 
 		public AttackEvent Attack(IAttackable target)
 		{
-			return new AttackEvent(this, target);
+			return new AttackEvent(this, target, true);
 		}
 
 		public int GetDamage()
@@ -52,7 +52,7 @@ namespace JackLondonRPG
 
 		public char[,] GetImage()
 		{
-			 return new char[6, 3] { 
+			return new char[6, 3] { 
                                             { '>', ' ', '>' },
                                             { '>', ' ', '>' },
                                             { '>', ' ', '>' },

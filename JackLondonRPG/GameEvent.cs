@@ -11,8 +11,16 @@ namespace JackLondonRPG
 
 		public char[,] GetImage()
 		{
-			// return this.GetMessage();
-			throw new System.NotImplementedException();
+			string message = this.GetMessage();
+			
+			char[,] returnValue = new char[1, message.Length];
+			
+			for (int i = 0; i < message.Length; ++i)
+			{
+				returnValue[0, i] = message[i];
+			}
+
+			return returnValue;
 		}
 	}
 }

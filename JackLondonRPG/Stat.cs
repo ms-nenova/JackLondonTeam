@@ -50,5 +50,10 @@ namespace JackLondonRPG
 		{
 			throw new NotImplementedException();
 		}
+
+		public string Name
+		{
+			get { throw new NotImplementedException(); }
+		}
 	}
 }
