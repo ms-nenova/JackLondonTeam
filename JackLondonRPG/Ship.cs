@@ -13,6 +13,7 @@ namespace JackLondonRPG
         private IList<Wall> wall;
         private IList<Cannon> cannon;
         private Stat<int> mobility;
+        Stat<int> MaxHealth { get; set; }
 
         public Ship(string name, Captain captain, int currHealth, List<Wall> wall, List<Cannon> cannon, Stat<int> mobility)
         {
@@ -75,10 +76,24 @@ namespace JackLondonRPG
             }
         }
 
-		public void GetDamaged(int damage)
-		{
-            this.currHealth -= damage;
-		}
+        public DamageEvent GetDamaged(int damage)
+        {
+            int finalHealth = currHealth - damage;
+
+            if (finalHealth > MaxHealth.CurrValue)
+            {
+                finalHealth = MaxHealth.CurrValue;
+            }
+
+            if (finalHealth < 0)
+            {
+                finalHealth = 0;
+            }
+
+            currHealth = finalHealth;
+
+            return new DamageEvent(this, damage);
+        }
 
 		public Captain Captain
 		{
