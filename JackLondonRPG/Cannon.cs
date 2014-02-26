@@ -70,7 +70,7 @@ namespace JackLondonRPG
 
 		public int GetDamage()
 		{
-			throw new NotImplementedException();
+            return damage.CurrValue;
 		}
 
 		public char[,] GetImage()
