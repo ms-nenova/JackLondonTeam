@@ -5,8 +5,8 @@ using System.Text;
 
 namespace JackLondonRPG
 {
-	public interface IAttackable : IIdentifiable
+	public interface IAttackable : IIdentifiable, IDamageable
 	{
-		AttackEvent GetAttacked(IAttacker attacker);
+		IEnumerable<GameEvent> GetAttacked(IAttacker attacker);
 	}
 }

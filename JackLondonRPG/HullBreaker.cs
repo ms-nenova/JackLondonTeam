@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    public class Fireball:ActiveSkill
+    class HullBreaker:ActiveSkill
     {
         private const int maxUses = 2;
         private const int damage = 3;
-        public Fireball(int numberOfUses,string name="Fireball", string description = "Damages a specific wall")
+        public HullBreaker(int numberOfUses,string name="Hull Breaker", string description = "Damages the enemy ship's health.")
             :base(name,description,numberOfUses)
         {
             this.NumberOfUses = maxUses;
@@ -18,17 +18,17 @@ namespace JackLondonRPG
 
         public override void Apply(object obj)
         {
-            if (this.NumberOfUses>0)
+            if (this.NumberOfUses > 0)
             {
                 try
                 {
-                    object ob=ValidateItem(obj);
-                    (ob as Wall).GetDamaged(damage);
+                    object ob = ValidateItem(obj);
+                    (ob as Ship).GetDamaged(damage);
                     this.NumberOfUses--;
                 }
-                catch(InvalidTargetException)
+                catch (InvalidTargetException)
                 {
-                    Console.WriteLine("The object you have selected is not a wall.Select a wall!"); ; 
+                    Console.WriteLine("The object you have selected is not a ship.Select a ship!"); ;
                 }
             }
             else
@@ -39,15 +39,14 @@ namespace JackLondonRPG
 
         public object ValidateItem(object obj)
         {
-            if(obj is Wall)
+            if (obj is Ship)
             {
                 return obj;
             }
             else
             {
-                throw new InvalidTargetException("The target is not a wall");
+                throw new InvalidTargetException("The target is not a ship");
             }
         }
-
     }
 }

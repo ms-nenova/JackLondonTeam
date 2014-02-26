@@ -49,13 +49,16 @@
     <Compile Include="Fireball.cs" />
     <Compile Include="Fog.cs" />
     <Compile Include="FortifyDamage.cs" />
+    <Compile Include="FortifyPrecision.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="GameEvent.cs" />
+    <Compile Include="HullBreaker.cs" />
     <Compile Include="IAttackable.cs" />
     <Compile Include="IAttacker.cs" />
     <Compile Include="IDamagable.cs" />
     <Compile Include="IDrawable.cs" />
     <Compile Include="IIdentifiable.cs" />
+    <Compile Include="InvalidTargetException.cs" />
     <Compile Include="IUpgradable.cs" />
     <Compile Include="Merchant.cs" />
     <Compile Include="NPC.cs" />

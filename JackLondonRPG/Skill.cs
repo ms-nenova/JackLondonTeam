@@ -9,9 +9,12 @@ namespace JackLondonRPG
     public abstract class Skill
     {
         private string name;
+        private string description;
 
-        public Skill()
+        public Skill(string name, string description)
         {
+            this.Name = name;
+            this.Descripion = description;
         }
 
         public string Name
@@ -29,6 +32,19 @@ namespace JackLondonRPG
 
 
         public abstract void Apply(object obj);
+
+
+        public string Descripion 
+        {
+            get
+            {
+                return this.name;
+            }
+            set
+            {
+                this.name = value;
+            }
+        }
 
     }
 }

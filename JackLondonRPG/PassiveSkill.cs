@@ -6,20 +6,15 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    class PassiveSkill : Skill
+    public abstract class PassiveSkill : Skill
     {
 
-        public PassiveSkill():base()
+        public PassiveSkill(string name,string description):base(name,description)
         {
         }
 
         public override void Apply(object obj)
         {
-            var cannons = (obj as Ship).Cannons;
-            foreach(var cannon in cannons)
-            {
-                cannon.Damage.RankChange(1);
-            }
         }
     }
 }

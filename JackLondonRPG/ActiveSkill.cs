@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    class ActiveSkill:Skill
+    public abstract class ActiveSkill:Skill
     {
         private int numberOfUses;
 
-        public ActiveSkill():base()
+        public ActiveSkill(string name, string description, int numberOfUses):base(name, description)
         {
+            this.NumberOfUses = numberOfUses;
         }
 
         public int NumberOfUses
@@ -30,13 +31,5 @@ namespace JackLondonRPG
         {
         }
 
-        public int ChooseTarget(Ship ship)
-        {
-            int target = new int();
-            Console.WriteLine("Choose a target for your ability [0-5]");
-            target = int.Parse(Console.ReadLine());
-
-            return target;
-        }
     }
 }
