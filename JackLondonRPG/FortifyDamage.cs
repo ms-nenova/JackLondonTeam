@@ -9,8 +9,8 @@ namespace JackLondonRPG
     public class FortifyDamage:PassiveSkill
     {
         private const int rankIncrease = 1;
-        public FortifyDamage(string name="Fortify Damage", string description = "Increases the damage of all your cannons.")
-            :base(name,description)
+        public FortifyDamage()
+            : base("Fortify Damage", "Increases the damage of all your cannons.")
         {
         }
 

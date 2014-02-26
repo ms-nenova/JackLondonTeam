@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    public class Merchant:NPC
+    public class Merchant : NPC
     {
         private int pricePerRankCannon;
         private int pricePerRankWall;
 
-        public Merchant(string name, string job, int priceCannon, int priceWall):base(name, job)
+        public Merchant(string name, int priceCannon, int priceWall)
+			: base(name)
         {
             this.PricePerRankUpCannon = priceCannon;
             this.PricePerRankWall = priceWall;
@@ -45,12 +46,20 @@ namespace JackLondonRPG
 
         public void Upgrade(Stat<int> stat)
 		{
-			throw new System.NotImplementedException();
+			//wall.CurrHealth += (1 / 5) * (wall.MaxHealth);
+			throw new NotImplementedException();
 		}
 
-        public void Upgrade(List<Stat<int>> stat)
+		public override GameEvent ExecuteOperationForCannon(Cannon cannon)
 		{
-			throw new System.NotImplementedException();
+			this.Upgrade(cannon.Precision);
+			this.Upgrade(cannon.Damage);
+			return new UpgradeEvent(cannon);
+		}
+
+		public override GameEvent ExecuteOperationForWall(Wall wall)
+		{
+			return new UpgradeEvent(wall);
 		}
     }
 }

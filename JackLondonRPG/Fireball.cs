@@ -10,8 +10,8 @@ namespace JackLondonRPG
     {
         private const int maxUses = 2;
         private const int damage = 3;
-        public Fireball(int numberOfUses,string name="Fireball", string description = "Damages a specific wall")
-            :base(name,description,numberOfUses)
+        public Fireball()
+            : base("Fireball", "Damages a specific wall", 2)
         {
             this.NumberOfUses = maxUses;
         }

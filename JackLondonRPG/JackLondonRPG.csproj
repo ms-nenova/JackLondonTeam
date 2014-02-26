@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="ActiveSkill.cs" />
     <Compile Include="AttackEvent.cs" />
+    <Compile Include="BattleEngine.cs" />
     <Compile Include="Cannon.cs" />
     <Compile Include="Captain.cs" />
+    <Compile Include="ConsoleVisualizer.cs" />
     <Compile Include="DamageEvent.cs" />
     <Compile Include="Fireball.cs" />
     <Compile Include="Fog.cs" />
@@ -62,6 +64,8 @@
     <Compile Include="IUpgradable.cs" />
     <Compile Include="Merchant.cs" />
     <Compile Include="NPC.cs" />
+    <Compile Include="NPCEngine.cs" />
+    <Compile Include="Opponent.cs" />
     <Compile Include="PassiveSkill.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +74,7 @@
     <Compile Include="Ship.cs" />
     <Compile Include="Skill.cs" />
     <Compile Include="Stat.cs" />
+    <Compile Include="UpgradeEvent.cs" />
     <Compile Include="Wall.cs" />
   </ItemGroup>
   <ItemGroup>

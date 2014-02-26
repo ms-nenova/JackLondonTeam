@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    public class Repairman:NPC
+    public class Repairman : NPC
     {
         private int pricePerPointRepair;
 
-        public Repairman(string name, string job, int price):base(name,job)
+        public Repairman(string name, int price)
+			: base(name)
         {
             this.PricePerPointRepair = price;
         }
@@ -27,14 +28,14 @@ namespace JackLondonRPG
             }
         }
 
-        public void RepairSpecificWall(Wall wall) 
+		public override GameEvent ExecuteOperationForCannon(Cannon cannon)
 		{
-			throw new System.NotImplementedException();
+			cannon.Damage.RankChange(1);
 		}
 
-        public void RepairAllWalls(List<Wall> walls)
+		public override GameEvent ExecuteOperationForWall(Wall wall)
 		{
-			throw new System.NotImplementedException();
+
 		}
     }
 }

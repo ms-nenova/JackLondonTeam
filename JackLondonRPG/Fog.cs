@@ -10,8 +10,8 @@ namespace JackLondonRPG
     {
         private const int maxUses = 2;
         private const int rankDecrease = -1;
-        public Fog(int numberOfUses,string name="Fog", string description = "Decreases the precision of a cannon.")
-            :base(name,description,numberOfUses)
+        public Fog()
+            : base("Fog", "Decreases the precision of a cannon.", 2)
         {
             this.NumberOfUses = maxUses;
         }

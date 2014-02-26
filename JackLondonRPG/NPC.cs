@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    public class NPC
+    public abstract class NPC
     {
         private string name;
         private string job;
 
-        public NPC(string name, string job)
+        public NPC(string name)
         {
             this.Name = name;
             this.Job = job;
@@ -28,17 +28,8 @@ namespace JackLondonRPG
                 this.name = value;
             }
         }
-        public string Job
-        {
-            get
-            {
-                return this.job;
-            }
-            set
-            {
-                this.job = value;
-            }
-        }
 
+		public abstract GameEvent ExecuteOperationForCannon(Cannon cannon);
+		public abstract GameEvent ExecuteOperationForWall(Wall wall);
     }
 }
