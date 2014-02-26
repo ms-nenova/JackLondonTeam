@@ -5,7 +5,7 @@ using System.Text;
 
 namespace JackLondonRPG
 {
-	public class Stat<T> : IUpgradable<T>
+	public class Stat<T> : IUpgradable<T>, ICloneable
 	{
 	
 		public int CurrRank
@@ -54,6 +54,11 @@ namespace JackLondonRPG
 		public string Name
 		{
 			get { throw new NotImplementedException(); }
+		}
+
+		public object Clone()
+		{
+			return this.MemberwiseClone();
 		}
 	}
 }

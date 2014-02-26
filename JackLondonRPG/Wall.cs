@@ -9,7 +9,7 @@ namespace JackLondonRPG
 	{
         private string name;
         private int currHealth;
-        Stat<int> MaxHealth { get; set; }
+        public Stat<int> MaxHealth { get; private set; }
        
         public Wall(string name, int currHealth, Stat<int> maxHealth)
         {
