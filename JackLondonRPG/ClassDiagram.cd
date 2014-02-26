@@ -71,21 +71,21 @@
   <Class Name="JackLondonRPG.Merchant">
     <Position X="0.5" Y="11.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAIAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <HashCode>ABAAAAIAAAAAAAAAAgAgAAAAAAAAAAAAABAAAAAQAEA=</HashCode>
       <FileName>Merchant.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="JackLondonRPG.Repairman">
     <Position X="3" Y="11.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkIA=</HashCode>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAEEA=</HashCode>
       <FileName>Repairman.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="JackLondonRPG.NPC">
     <Position X="1.75" Y="8.5" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAYAAAAEAAAAABAAAAAAAEA=</HashCode>
       <FileName>NPC.cs</FileName>
     </TypeIdentifier>
   </Class>
