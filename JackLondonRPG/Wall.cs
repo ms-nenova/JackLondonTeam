@@ -18,15 +18,44 @@ namespace JackLondonRPG
             this.MaxHealth = maxHealth;
         }
 
+        public string Name
+        {
+            get { return this.name; }
+
+            private set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentException("Name cannot be empty or null!");
+                }
+                this.name = value;
+            }
+        }
+
+        public int CurrHealth
+        {
+            get
+            {
+                return this.currHealth;
+            }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Current health cannot be negative!");
+                }
+                this.currHealth = value;
+            }
+        }
+
         public IEnumerable<GameEvent> GetAttacked(IAttacker attacker)
         {
-
             List<GameEvent> events = new List<GameEvent>();
             events.Add(new AttackEvent(attacker, this, true));
             events.Add(GetDamaged(attacker.GetDamage()).First());
 
             return events;
-
         }
 
 		public IEnumerable<GameEvent> GetDamaged(int damage)
@@ -52,23 +81,6 @@ namespace JackLondonRPG
             return events;
 		}
 
-		public int CurrHealth
-		{
-			get
-			{
-                return this.currHealth;
-			}
-
-			set
-			{
-                if (value < 0)
-                {
-                    throw new ArgumentException("Current health cannot be negative!");
-                }
-                this.currHealth = value;
-			}
-		}
-
 		public char[,] GetImage()
 		{
             char[,] wall = new char[6, 3] { 
@@ -81,20 +93,5 @@ namespace JackLondonRPG
                                            };
             return wall;
 		}
-
-		public string Name
-		{
-            get { return this.name; }
-
-			private set
-            {
-                if (value == null)
-                {
-                    throw new ArgumentException("Name cannot be empty or null!");
-                }
-                this.name = value;
-            }
-		}
-
 	}
 }
