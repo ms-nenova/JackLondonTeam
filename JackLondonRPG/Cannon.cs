@@ -55,11 +55,14 @@ namespace JackLondonRPG
 
             List<GameEvent> events = new List<GameEvent>();
 
-            events.Add(target.GetAttacked(this).First()); //Adds the attack event
-
             if (atkLanded)
             {
+                events.Add(new AttackEvent(this, target, true));
                 events.Add(target.GetAttacked(this).Last()); // Adds the damage event if the attack landed
+            }
+            else
+            {
+                events.Add(new AttackEvent(this, target, false));
             }
 
             return events;
@@ -67,7 +70,7 @@ namespace JackLondonRPG
 
 		public int GetDamage()
 		{
-			throw new NotImplementedException();
+            return damage.CurrValue;
 		}
 
 		public char[,] GetImage()
