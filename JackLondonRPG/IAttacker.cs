@@ -8,7 +8,7 @@ namespace JackLondonRPG
 	public interface IAttacker : IIdentifiable
 	{
 	
-		AttackEvent Attack(IAttackable target);
+		IEnumerable<GameEvent> Attack(IAttackable target);
 
 		int GetDamage();
 	}

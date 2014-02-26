@@ -40,9 +40,24 @@ namespace JackLondonRPG
 			}
 		}
 
-		public AttackEvent Attack(IAttackable target)
+		public IEnumerable<GameEvent> Attack(IAttackable target)
 		{
-			return new AttackEvent(this, target, true);
+            int randomFactor = RandomGenerator.Random.Next();
+            bool atkLanded;
+            if (randomFactor%this.Precision.CurrValue>20)
+            {
+                atkLanded = true;
+            }
+            else
+            {
+                atkLanded = false;
+            }
+            List<GameEvent> events = new List<GameEvent>();
+            
+            events.Add(new AttackEvent(this, target, atkLanded));
+            events.Add(new DamageEvent(target, 10));
+
+            return events;
 		}
 
 		public int GetDamage()
