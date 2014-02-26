@@ -5,18 +5,20 @@ using System.Text;
 
 namespace JackLondonRPG
 {
-	public class Stat<T> : IUpgradable<T>, ICloneable
-	{
-	
-		public int CurrRank
-		{
-			get;set; 
-		}
+    public class Stat<T> : IUpgradable<T>, ICloneable
+    {
 
-		public T CurrValue
-		{
-			get;set;
-		}
+        public int CurrRank
+        {
+            get;
+            set;
+        }
+
+        public T CurrValue
+        {
+            get;
+            set;
+        }
 
         public int MaxRank
         {
@@ -41,24 +43,24 @@ namespace JackLondonRPG
             set;
         }
 
-		public void RankChange(int rankManipulator)//rankManipulator shows by how many ranks the stat should go up or down in case of negative numbers.
-		{
-			throw new NotImplementedException();
-		}
+        public void RankChange(int rankManipulator)//rankManipulator shows by how many ranks the stat should go up or down in case of negative numbers.
+        {
+            throw new NotImplementedException();
+        }
 
-		public void RankChange(ref int goldProvider)
-		{
-			throw new NotImplementedException();
-		}
+        public void RankChange(ref int goldProvider)
+        {
+            throw new NotImplementedException();
+        }
 
-		public string Name
-		{
-			get { throw new NotImplementedException(); }
-		}
+        public string Name
+        {
+            get { throw new NotImplementedException(); }
+        }
 
-		public object Clone()
-		{
-			return this.MemberwiseClone();
-		}
-	}
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+    }
 }
