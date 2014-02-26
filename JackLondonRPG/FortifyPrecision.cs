@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-    public class FortifyDamage:PassiveSkill
+    class FortifyPrecision:PassiveSkill
     {
         private const int rankIncrease = 1;
-        public FortifyDamage(string name="Fortify Damage", string description = "Increases the damage of all your cannons.")
+        public FortifyPrecision(string name="Fortify Precision", string description = "Increases the precision of all your cannons.")
             :base(name,description)
         {
         }
@@ -22,7 +22,7 @@ namespace JackLondonRPG
                 var cannons = (ob as Ship).Cannons;
                 foreach (var cannon in cannons)
                 {
-                    cannon.Damage.RankChange(rankIncrease);
+                    cannon.Precision.RankChange(rankIncrease);
                 }
             }
             catch (InvalidTargetException)
@@ -42,6 +42,5 @@ namespace JackLondonRPG
                 throw new InvalidTargetException("The target is not a ship");
             }
         }
-
     }
 }
