@@ -5,45 +5,35 @@ using System.Text;
 
 namespace JackLondonRPG
 {
-	public class Captain
-	{
-        private string name;
-        private Skill ability;
-
-        public Captain (string name, Skill ability)
-        {
-            this.name = name;
-            this.ability = ability;
-        }
+	public class Captain :IIdentifiable
+	{      
 
         public string Name
         {
             get
             {
-               return this.name;
+                return this.Name;
             }
             private set
             {
-                this.name = value;
+                if (value == null)
+                {
+                    throw new ArgumentException("Name cannot be empty or null!");
+                }
+                this.Name = value;
             }
+        }
+        public List<Skill> Abilities { get; set; }
+
+        public Captain(string name)
+        {
+            this.Name = name;
+            Abilities = new List<Skill>();
         }
 
-        public Skill Ability
+        public void UseAbility(int skillIndex, object target)
         {
-            get
-            {
-                return this.ability;
-            }
-            private set
-            {
-                this.ability = value;
-            }
+            Abilities[skillIndex].Apply(target);
         }
-
-        public void UseAbility(Skill skill)
-        {
-            // skill.Apply();
-			throw new System.NotImplementedException();
-        }
-	}
+    }
 }
