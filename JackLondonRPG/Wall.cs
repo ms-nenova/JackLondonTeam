@@ -9,7 +9,7 @@ namespace JackLondonRPG
 	{
         private string name;
         private int currHealth;
-        public Stat<int> MaxHealth { get; private set; }
+        Stat<int> MaxHealth { get; set; }
        
         public Wall(string name, int currHealth, Stat<int> maxHealth)
         {
@@ -18,19 +18,24 @@ namespace JackLondonRPG
             this.MaxHealth = maxHealth;
         }
 
-		public AttackEvent GetAttacked(IAttacker attacker)
-		{
-			// attacker.GetDamage();
-			throw new System.NotImplementedException();
-		}
+        public IEnumerable<GameEvent> GetAttacked(IAttacker attacker)
+        {
 
-		public DamageEvent GetDamaged(int damage)
+            List<GameEvent> events = new List<GameEvent>();
+            events.Add(new AttackEvent(attacker, this, true));
+            events.Add(GetDamaged(attacker.GetDamage()).First());
+
+            return events;
+
+        }
+
+		public IEnumerable<GameEvent> GetDamaged(int damage)
 		{
             int finalHealth = currHealth - damage;
 
-            if (finalHealth>MaxHealth.CurrValue)
+            if (finalHealth>this.MaxHealth.CurrValue)
             {
-                finalHealth = MaxHealth.CurrValue;
+                finalHealth = this.MaxHealth.CurrValue;
             }
 
             if (finalHealth<0)
@@ -38,9 +43,13 @@ namespace JackLondonRPG
                 finalHealth = 0;
             }
 
-            currHealth = finalHealth;
+            this.currHealth = finalHealth;
 
-            return new DamageEvent(this, damage);
+            var events = new List<GameEvent>();
+
+            events.Add(new DamageEvent(this, damage));
+
+            return events;
 		}
 
 		public int CurrHealth

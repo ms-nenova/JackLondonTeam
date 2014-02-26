@@ -44,7 +44,7 @@ namespace JackLondonRPG
 		{
             int randomFactor = RandomGenerator.Random.Next();
             bool atkLanded;
-            if (randomFactor%this.Precision.CurrValue>20)
+            if (randomFactor%100<this.precision.CurrValue)
             {
                 atkLanded = true;
             }
@@ -52,10 +52,15 @@ namespace JackLondonRPG
             {
                 atkLanded = false;
             }
+
             List<GameEvent> events = new List<GameEvent>();
-            
-            events.Add(new AttackEvent(this, target, atkLanded));
-            events.Add(new DamageEvent(target, 10));
+
+            events.Add(target.GetAttacked(this).First()); //Adds the attack event
+
+            if (atkLanded)
+            {
+                events.Add(target.GetAttacked(this).Last()); // Adds the damage event if the attack landed
+            }
 
             return events;
 		}
