@@ -5,7 +5,7 @@ using System.Text;
 
 namespace JackLondonRPG
 {
-	public class Ship : IAttackable, IDamageable, IAttacker, IDrawable
+	public class Ship : IAttackable, IDamageable, IDrawable
 	{
         private string name;
         private Captain captain;
@@ -129,19 +129,17 @@ namespace JackLondonRPG
             return new DamageEvent(this, damage);
         }
 
-		public AttackEvent Attack(IAttackable target)
-		{
-            return new AttackEvent(this, target, true);
-		}
-
-        public int GetDamage()
-        {
-            throw new NotImplementedException();
-        }
-
 		public char[,] GetImage()
 		{
-			throw new NotImplementedException();
+            char[,] ship = new char[6, 3] { 
+                                            { '#', '#', '#' },
+                                            { '#', 'S', '#' },
+                                            { '#', 'H', '#' },
+                                            { '#', 'I', '#' },
+                                            { '#', 'P', '#' },
+                                            { '#', '#', '#' },                                                     
+                                           };
+            return ship;
 		}
 	}
 }
