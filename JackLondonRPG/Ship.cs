@@ -13,7 +13,7 @@ namespace JackLondonRPG
         private IList<Wall> wall;
         private IList<Cannon> cannon;
         private Stat<int> mobility;
-        Stat<int> MaxHealth { get; set; }
+        public Stat<int> MaxHealth { get; set; }
 
         public Ship(string name, Captain captain, int currHealth, List<Wall> wall, List<Cannon> cannon, Stat<int> mobility)
         {
@@ -25,10 +25,57 @@ namespace JackLondonRPG
             this.Mobility = mobility;
         }
 
+        public string Name
+        {
+            get { return this.name; }
+
+            private set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentException("Name cannot be empty or null!");
+                }
+                this.name = value;
+            }
+        }
+
+        public int CurrHealth
+        {
+            get
+            {
+                return this.currHealth;
+            }
+
+            set
+            {
+                this.currHealth = value;
+            }
+        }
+
+        public Captain Captain
+        {
+            get
+            {
+                return this.captain;
+            }
+
+            private set
+            {
+                this.captain = value;
+            }
+        }
+
         public Stat<int> Mobility
         {
-            get;
-            private set;
+            get
+            {
+                return this.mobility;
+            }
+
+            private set
+            {
+                this.mobility = value;
+            }
         }
 
 		public List<Cannon> Cannons
@@ -61,20 +108,7 @@ namespace JackLondonRPG
 		{
             // attacker.GetDamage();
 			throw new NotImplementedException();
-		}
-
-        public int CurrHealth
-        {
-            get
-            {
-                return this.currHealth;
-            }
-
-            private set
-            {
-                this.currHealth = value;
-            }
-        }
+		}  
 
         public DamageEvent GetDamaged(int damage)
         {
@@ -95,41 +129,14 @@ namespace JackLondonRPG
             return new DamageEvent(this, damage);
         }
 
-		public Captain Captain
-		{
-			get
-			{
-                return this.captain;
-			}
-
-            private set
-            {
-                this.captain = value;
-            }
-		}
-
-		public string Name
-		{
-            get { return this.name; }
-
-            private set
-            {
-                if (value == null)
-                {
-                    throw new ArgumentException("Name cannot be empty or null!");
-                }
-                this.name = value;
-            }
-		}
-
 		public AttackEvent Attack(IAttackable target)
 		{
-			throw new NotImplementedException();
+            return new AttackEvent(this, target, true);
 		}
 
-        public void GetDamaged(int damage)
+        public int GetDamage()
         {
-            this.currHealth -= damage;
+            throw new NotImplementedException();
         }
 
 		public char[,] GetImage()
