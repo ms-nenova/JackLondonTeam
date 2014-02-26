@@ -9,8 +9,8 @@ namespace JackLondonRPG
     class FortifyPrecision:PassiveSkill
     {
         private const int rankIncrease = 1;
-        public FortifyPrecision(string name="Fortify Precision", string description = "Increases the precision of all your cannons.")
-            :base(name,description)
+        public FortifyPrecision()
+            : base("Fortify Precision", "Increases the precision of all your cannons.")
         {
         }
 

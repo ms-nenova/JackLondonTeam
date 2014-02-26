@@ -10,8 +10,8 @@ namespace JackLondonRPG
     {
         private const int maxUses = 2;
         private const int damage = 3;
-        public HullBreaker(int numberOfUses,string name="Hull Breaker", string description = "Damages the enemy ship's health.")
-            :base(name,description,numberOfUses)
+        public HullBreaker()
+            : base("Hull Breaker", "Damages the enemy ship's health.", 2)
         {
             this.NumberOfUses = maxUses;
         }
