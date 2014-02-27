@@ -54,12 +54,12 @@ namespace JackLondonRPG
 		{
 			this.Upgrade(cannon.Precision);
 			this.Upgrade(cannon.Damage);
-			return new UpgradeEvent(cannon);
+			return new UpgradeEvent<int>(cannon.Damage);
 		}
 
 		public override GameEvent ExecuteOperationForWall(Wall wall)
 		{
-			return new UpgradeEvent(wall);
+			return new UpgradeEvent<int>(wall.MaxHealth);
 		}
     }
 }

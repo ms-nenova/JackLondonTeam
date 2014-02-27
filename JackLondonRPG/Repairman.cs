@@ -31,11 +31,13 @@ namespace JackLondonRPG
 		public override GameEvent ExecuteOperationForCannon(Cannon cannon)
 		{
 			cannon.Damage.RankChange(1);
+            return new UpgradeEvent<int>(cannon.Damage);
 		}
 
 		public override GameEvent ExecuteOperationForWall(Wall wall)
 		{
-
+            wall.MaxHealth.RankChange(1);
+            return new UpgradeEvent<int>(wall.MaxHealth);
 		}
     }
 }

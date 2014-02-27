@@ -47,12 +47,12 @@ namespace JackLondonRPG
 					case 1:
 						var cannonIndex = this.GetEntityIndex("cannon");
 						this.validateEntityIndex(cannonIndex,ship.Cannons.Count);//been here
- 						gameEvents.Add(npc.ExecuteOperationForCannon(ship.Cannons.ElementAt(cannonIndex), ship));
+ 						gameEvents.Add(npc.ExecuteOperationForCannon(ship.Cannons.ElementAt(cannonIndex)));
 						break;
 					case 2: 
 						var wallIndex = this.GetEntityIndex("wall");
 						this.validateEntityIndex(wallIndex,ship.Walls.Count);//been here
-						gameEvents.Add(npc.ExecuteOperationForWall(ship.Walls.ElementAt(wallIndex), ship));
+						gameEvents.Add(npc.ExecuteOperationForWall(ship.Walls.ElementAt(wallIndex)));
 						break;
 					case 3:
 						Environment.Exit(0);
