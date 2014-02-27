@@ -13,6 +13,11 @@ namespace JackLondonRPG
 		public const int shipHealthBuffer = 4;
 		public const int distanceBetweenShips = 10;
 
+		public static void ClearScreen()
+		{
+			Console.Clear();	
+		}
+
 		public static void VisualizeDrawable(IDrawable drawable)
 		{
 			var img = drawable.GetImage();

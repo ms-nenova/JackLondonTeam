@@ -53,6 +53,8 @@ namespace JackLondonRPG
 		{
 			while (true)
 			{
+				ConsoleVisualizer.ClearScreen();
+
 				ConsoleVisualizer.VisualizeShip(playerShip);
 
 				var merchantChoice = new Merchant("Pesho", defaultCannonUpgradePrice, defaultWallUpgradePrice);
