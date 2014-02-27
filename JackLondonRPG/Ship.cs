@@ -12,17 +12,15 @@ namespace JackLondonRPG
         private int currHealth;
         private IList<Wall> wall;
         private IList<Cannon> cannon;
-        private Stat<int> mobility;
         public Stat<int> MaxHealth { get; set; }
 
-        public Ship(string name, Captain captain, int currHealth, List<Wall> wall, List<Cannon> cannon, Stat<int> mobility)
+        public Ship(string name, Captain captain, int currHealth, List<Wall> wall, List<Cannon> cannon)
         {
             this.Name = name;
             this.Captain = captain;
             this.CurrHealth = currHealth;
             this.Walls = new List<Wall>(wall);
             this.Cannons = new List<Cannon>(cannon);
-            this.Mobility = mobility;
         }
 
         public string Name
