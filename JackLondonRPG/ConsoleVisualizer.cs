@@ -39,6 +39,30 @@ namespace JackLondonRPG
 
 		}
 
+		public static void VisualizeShip(Ship ship)
+		{
+			int numberOfShipsRows = ship.Cannons.Count;
+			int middleRow = numberOfShipsRows / 2;
+
+			for (int i = 0; i < numberOfShipsRows; ++i)
+			{
+				if (i == numberOfShipsRows)
+				{
+					Console.Write(ship.CurrHealth.ToString().PadRight(shipHealthBuffer, '*'));
+				}
+
+				else
+				{
+					Console.Write(new string('*', shipHealthBuffer));
+				}
+
+				VisualizeCannon(ship.Cannons[i], true);
+				VisualizeWall(ship.Walls[i], true);
+
+				Console.WriteLine();
+			}
+		}
+
 		public static void VisualizeBattleState(Ship firstShip, Ship secondShip, IEnumerable<GameEvent> events)
 		{
 			int numberOfShipsRows = firstShip.Cannons.Count;
@@ -56,12 +80,70 @@ namespace JackLondonRPG
 					Console.Write(new string('*', shipHealthBuffer));
 				}
 
+				VisualizeCannon(firstShip.Cannons[i], true);
+				VisualizeWall(firstShip.Walls[i], true);
+
+				for (int j = 0; j < distanceBetweenShips; ++j)
+				{
+					Console.Write('.');
+				}
+
+				VisualizeCannon(secondShip.Cannons[i], false);
+				VisualizeWall(secondShip.Walls[i], false);
+
+				if (i == numberOfShipsRows)
+				{
+					Console.Write(secondShip.CurrHealth.ToString().PadLeft(shipHealthBuffer, '*'));
+				}
+
+				Console.WriteLine();
 			}
 
 			foreach (var gameEvent in events)
 			{
 				VisualizeDrawable(gameEvent);
 				Console.WriteLine();
+			}
+		}
+
+		public static void VisualizeCannon(Cannon cannon, bool padRight)
+		{
+			StringBuilder cannonStr = new StringBuilder();
+			cannonStr.Append(cannon.GetDamage().ToString());
+			char[,] cannonImg = cannon.GetImage();
+
+			for (int i = 0; i < cannonImg.GetLength(1); ++i)
+			{
+				cannonStr.Append(cannonImg[0, i]);
+			}
+
+			if (padRight)
+			{
+				Console.Write(cannonStr.ToString().PadRight(cannonBuffer, '*'));
+			}
+			else
+			{
+				Console.Write(cannonStr.ToString().PadLeft(cannonBuffer, '*'));
+			}
+		}
+		public static void VisualizeWall(Wall wall, bool padRight)
+		{
+			StringBuilder wallStr = new StringBuilder();
+			wallStr.Append(wall.CurrHealth.ToString());
+			char[,] wallImg = wall.GetImage();
+
+			for (int i = 0; i < wallImg.GetLength(1); ++i)
+			{
+				wallStr.Append(wallImg[0, i]);
+			}
+
+			if (padRight)
+			{
+				Console.Write(wallStr.ToString().PadRight(cannonBuffer, '*'));
+			}
+			else
+			{
+				Console.Write(wallStr.ToString().PadLeft(cannonBuffer, '*'));
 			}
 		}
 
