@@ -9,7 +9,9 @@ namespace JackLondonRPG
     class Program
     {
         static void Main()
-        {            
+        {
+            GameEngine engine = new GameEngine("Tropico", "Johny");
+            engine.Run();
         }
     }
 }

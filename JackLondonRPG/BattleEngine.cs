@@ -6,6 +6,17 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
+    public struct BattleState
+    {
+        public Ship FirstShip;
+        public Ship SecondShip;
+
+        public BattleState(Ship sh1, Ship sh2)
+        {
+            FirstShip = sh1;
+            SecondShip = sh2;
+        }
+    }
     class BattleEngine
     {
         private static Ship enemyShip;
@@ -47,9 +58,11 @@ namespace JackLondonRPG
                 enemyShip = value;
             }
         }
-        public void MakeMove()
+        public BattleState MakeMove()
         {
+            BattleState state = new BattleState(PlayerShip, EnemyShip);
             ListenForAction();
+            return state;
         }
 
         public static void ListenForAction()
@@ -105,6 +118,7 @@ namespace JackLondonRPG
 
         private static void Shoot()
         {
+            List<GameEvent> events = new List<GameEvent>();
             for (int i = 0; i < PlayerShip.Cannons.Count; i++)
             {
                 if (EnemyShip.Walls[i].CurrHealth > 0)

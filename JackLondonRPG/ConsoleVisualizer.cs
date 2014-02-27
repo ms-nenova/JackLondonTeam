@@ -71,7 +71,7 @@ namespace JackLondonRPG
 			}
 		}
 
-		public static void VisualizeBattleState(Ship firstShip, Ship secondShip, IEnumerable<GameEvent> events)
+		public static void VisualizeBattleState(Ship firstShip, Ship secondShip)
 		{
 			int numberOfShipsRows = firstShip.Cannons.Count;
 			int middleRow = numberOfShipsRows / 2;
@@ -107,11 +107,11 @@ namespace JackLondonRPG
 				Console.WriteLine();
 			}
 
-			foreach (var gameEvent in events)
-			{
-				VisualizeDrawable(gameEvent);
-				Console.WriteLine();
-			}
+            //foreach (var gameEvent in events)
+            //{
+            //    VisualizeDrawable(gameEvent);
+            //    Console.WriteLine();
+            //}
 		}
 
 		public static void VisualizeCannon(Cannon cannon, bool padRight)

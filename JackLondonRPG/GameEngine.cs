@@ -91,11 +91,11 @@ namespace JackLondonRPG
 
 					while (true)
 					{
-						ConsoleVisualizer.VisualizeBattleState(currBattleState);
-						if (currBattleState.FirstShip.Health <= 0 || currBattleState.SecondShip.Health <= 0) break;
+						ConsoleVisualizer.VisualizeBattleState(currBattleState.FirstShip,currBattleState.SecondShip);
+						if (currBattleState.FirstShip.CurrHealth <= 0 || currBattleState.SecondShip.CurrHealth <= 0) break;
 					}
 
-					if (currBattleState.FirstShip.Health < 0)
+					if (currBattleState.FirstShip.CurrHealth < 0)
 					{
 						Console.WriteLine("You lost.");
 						Console.ReadKey();
