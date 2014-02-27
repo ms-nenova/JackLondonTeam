@@ -12,11 +12,11 @@ namespace JackLondonRPG
 		{
 			if(npc as Merchant != null) 
 			{
-				this.ShowMenu("Upgrade", ship);
+				return this.ShowMenu("Upgrade",npc, ship);//been here
 			}
 			else if(npc as Repairman != null)
 			{
-				this.ShowMenu("Repair", ship);
+				return this.ShowMenu("Repair", npc, ship);//been here
 			}
 			else 
 			{
@@ -37,7 +37,7 @@ namespace JackLondonRPG
 
 				var input = Console.ReadLine();
 				int choise;
-				if(!int.TryParse(line, out choise))
+				if(!int.TryParse(input, out choise))//been here
 				{
 					Console.WriteLine("Please enter number");
 				}
@@ -46,12 +46,12 @@ namespace JackLondonRPG
 				{
 					case 1:
 						var cannonIndex = this.GetEntityIndex("cannon");
-						this.validateEntityIndex(cannonIndex);
+						this.validateEntityIndex(cannonIndex,ship.Cannons.Count);//been here
  						gameEvents.Add(npc.ExecuteOperationForCannon(ship.Cannons.ElementAt(cannonIndex), ship));
 						break;
 					case 2: 
 						var wallIndex = this.GetEntityIndex("wall");
-						this.validateEntityIndex(wallIndex);
+						this.validateEntityIndex(wallIndex,ship.Walls.Count);//been here
 						gameEvents.Add(npc.ExecuteOperationForWall(ship.Walls.ElementAt(wallIndex), ship));
 						break;
 					case 3:

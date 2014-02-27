@@ -29,6 +29,18 @@ namespace JackLondonRPG
             }
         }
 
+        public string Job
+        {
+            get
+            {
+                return this.job;
+            }
+            set
+            {
+                this.job = value;
+            }
+        }
+
 		public abstract GameEvent ExecuteOperationForCannon(Cannon cannon);
 		public abstract GameEvent ExecuteOperationForWall(Wall wall);
     }

@@ -63,18 +63,18 @@ namespace JackLondonRPG
             }
         }
 
-        public Stat<int> Mobility
-        {
-            get
-            {
-                return this.mobility;
-            }
+        //public Stat<int> Mobility
+        //{
+        //    get
+        //    {
+        //        return this.mobility;
+        //    }
 
-            private set
-            {
-                this.mobility = value;
-            }
-        }
+        //    private set
+        //    {
+        //        this.mobility = value;
+        //    }
+        //}
 
 		public List<Cannon> Cannons
 		{
@@ -102,13 +102,16 @@ namespace JackLondonRPG
 			}
 		}
 
-		public AttackEvent GetAttacked(IAttacker attacker)
+		public IEnumerable<GameEvent> GetAttacked(IAttacker attacker)
 		{
-            // attacker.GetDamage();
-			throw new NotImplementedException();
+            List<GameEvent> events = new List<GameEvent>();
+            events.Add(new AttackEvent(attacker, this, true));
+            events.Add(GetDamaged(attacker.GetDamage()).First());
+
+            return events;
 		}  
 
-        public DamageEvent GetDamaged(int damage)
+        public IEnumerable<GameEvent> GetDamaged(int damage)
         {
             int finalHealth = currHealth - damage;
 
@@ -123,8 +126,9 @@ namespace JackLondonRPG
             }
 
             currHealth = finalHealth;
-
-            return new DamageEvent(this, damage);
+            List<GameEvent> events = new List<GameEvent>();
+            events.Add(new DamageEvent(this, damage));
+            return events;
         }
 
 		public char[,] GetImage()

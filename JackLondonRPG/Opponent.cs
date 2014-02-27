@@ -23,9 +23,9 @@ namespace JackLondonRPG
 			//Stat<int> mobility = RandomGenerator.Random.Next(playerShip.Mobility-(playerShip.Mobility*percentage)
 			//	,playerShip.Mobility+(playerShip.Mobility*percentage)+1);
 
-			var mobility = playerShip.Mobility;
+            //var mobility = playerShip.Mobility;
 
-			return new Ship("Oponent", captain, currHeath, listOfWalls, listOfCannons, mobility);
+			return new Ship("Oponent", captain, currHeath, listOfWalls, listOfCannons);//been here and on the upper row
 		}
 
 
@@ -35,7 +35,7 @@ namespace JackLondonRPG
 			//maybe captain can have list of abilities
 			//TODO: add random different skills for oponent
 
-			return new Captain("Opponent captain", playerCaptain.Ability);
+			return new Captain("Opponent captain");//been here
 		}
 
 		private static List<Wall> GetOpponentWalls(List<Wall> playerWalls)
