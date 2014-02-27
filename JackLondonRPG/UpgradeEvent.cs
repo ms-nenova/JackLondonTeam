@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace JackLondonRPG
 {
-	public class UpgradeEvent : GameEvent
+	public class UpgradeEvent<T> : GameEvent
 	{
-		public UpgradeEvent(IUpgradable<object> upgradedEntity)
+		public UpgradeEvent(IUpgradable<T> upgradedEntity)
 		{
 			this.UgradedEntity = upgradedEntity;
 		}
 
-		public IUpgradable<object> UgradedEntity { get; private set; }
+		public IUpgradable<T> UgradedEntity { get; private set; }
 
 		public override string GetMessage()
 		{

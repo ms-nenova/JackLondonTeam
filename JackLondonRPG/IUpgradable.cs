@@ -19,7 +19,6 @@ namespace JackLondonRPG
 			get;
 		}
 	
-		void RankChange(int rankManipulator);
-		void RankChange(ref int goldProvider);
+		IEnumerable<GameEvent> RankChange(int rankManipulator);
 	}
 }
