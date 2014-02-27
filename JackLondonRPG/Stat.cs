@@ -5,62 +5,55 @@ using System.Text;
 
 namespace JackLondonRPG
 {
-    public class Stat<T> : IUpgradable<T>, ICloneable
-    {
+	public class Stat<T> : IUpgradable<T>, ICloneable
+	{
+		private List<T> rankValues;
 
-        public int CurrRank
-        {
-            get;
-            set;
-        }
+		public Stat(string name, List<T> rankValues)
+		{
+			this.Name = name;
+			this.CurrRank = 0;
+			this.MaxRank = rankValues.Count;
+			this.rankValues = new List<T>(rankValues);
+		}
 
-        public T CurrValue
-        {
-            get;
-            set;
-        }
+		public string Name { get; private set; }
 
-        public int MaxRank
-        {
-            get;
-            set;
-        }
+		public int CurrRank { get; private set; }
+		public int MaxRank { get; private set; }
 
-        //public List<int> UpdgradeCosts
-        //{
-        //    get
-        //    {
-        //        throw new System.NotImplementedException();
-        //    }
-        //    set
-        //    {
-        //    }
-        //}
+		public T CurrValue
+		{
+			get
+			{
+				return this.rankValues[this.CurrRank];
+			}
+		}
 
-        public int RankValues
-        {
-            get;
-            set;
-        }
+		public IEnumerable<GameEvent> RankChange(int rankManipulator)//rankManipulator shows by how many ranks the stat should go up or down in case of negative numbers.
+		{
+			int newRank = this.CurrRank + rankManipulator;
 
-        public void RankChange(int rankManipulator)//rankManipulator shows by how many ranks the stat should go up or down in case of negative numbers.
-        {
-            throw new NotImplementedException();
-        }
+			if (newRank < 0)
+			{
+				newRank = 0;
+			}
+			if (newRank >= this.MaxRank)
+			{
+				newRank = this.MaxRank - 1;
+			}
 
-        public void RankChange(ref int goldProvider)
-        {
-            throw new NotImplementedException();
-        }
+			this.CurrRank = newRank;
 
-        public string Name
-        {
-            get { throw new NotImplementedException(); }
-        }
+			List<GameEvent> events = new List<GameEvent>();
+			events.Add(new UpgradeEvent<T>(this));
 
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
-    }
+			return events;
+		}
+
+		public object Clone()
+		{
+			return this.MemberwiseClone();
+		}
+	}
 }

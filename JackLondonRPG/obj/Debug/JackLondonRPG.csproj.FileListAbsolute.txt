@@ -22,3 +22,4 @@ C:\Users\Martin\Documents\GitHub\JackLondonTeam\JackLondonRPG\bin\Debug\JackLond
 C:\Users\Tihomir\Documents\GitHub\JackLondonTeam\JackLondonRPG\bin\Debug\JackLondonRPG.exe.config
 C:\Users\Tihomir\Documents\GitHub\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.exe
 C:\Users\Tihomir\Documents\GitHub\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.pdb
+C:\Users\Tihomir\Documents\GitHub\JackLondonTeam\JackLondonRPG\obj\Debug\JackLondonRPG.csprojResolveAssemblyReference.cache
