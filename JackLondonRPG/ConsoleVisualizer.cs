@@ -9,7 +9,7 @@ namespace JackLondonRPG
 	public static class ConsoleVisualizer
 	{
 		public const int cannonBuffer = 4;
-		public const int wallBuffer = 4;
+		public const int wallBuffer = 6;
 		public const int shipHealthBuffer = 4;
 		public const int distanceBetweenShips = 10;
 
@@ -31,12 +31,15 @@ namespace JackLondonRPG
 
 		public static void VisualizeMerchant(Merchant merchant)
 		{
-
+			Console.WriteLine("Merchant " + merchant.Name);
+			Console.WriteLine("Price to upgrade cannon: " + merchant.PricePerRankUpCannon);
+			Console.WriteLine("Price to upgrade wall: " + merchant.PricePerRankWall);
 		}
 
 		public static void VisualizeRepairman(Repairman repairman)
 		{
-
+			Console.WriteLine("Repairman " + repairman.Name);
+			Console.WriteLine("Price to rapair wall(1 point): " + repairman.PricePerPointRepair);
 		}
 
 		public static void VisualizeShip(Ship ship)
@@ -129,7 +132,8 @@ namespace JackLondonRPG
 		public static void VisualizeWall(Wall wall, bool padRight)
 		{
 			StringBuilder wallStr = new StringBuilder();
-			wallStr.Append(wall.CurrHealth.ToString());
+			wallStr.Append(wall.CurrHealth);
+			wallStr.Append(wall.MaxHealth.CurrValue);
 			char[,] wallImg = wall.GetImage();
 
 			for (int i = 0; i < wallImg.GetLength(1); ++i)
